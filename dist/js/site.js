@@ -9,23 +9,44 @@
 // Main Site Function
 // ================
 
-// Setup interactive svg
+// Huaban setup
 var huaban = Snap('.huaban');
 
-// Establish huaban elements
+// Huaban surface setup
 var surface = document.querySelector('.huaban');
-var huabanOptions = document.querySelectorAll('.huaban-options li');
-var message = document.querySelector('.huaban-message');
-var messageText = document.querySelector('.huaban-message span');
-
-// Establish huaban surface events
 surface.addEventListener('mousedown', touchSurface, false);
 surface.addEventListener('mousemove', drawSurface, false);
 surface.addEventListener('mouseup', leaveSurface, false);
 
-// Establish huaban option events
-huabanOptions[0].addEventListener('click', resetSurface, false);
-huabanOptions[1].addEventListener('click', undo, false);
+// Huaban menu setup
+var menu = document.querySelectorAll('.huaban-menu li');
+menu[0].addEventListener('click', resetSurface, false);
+menu[1].addEventListener('click', undo, false);
+menu[2].addEventListener('click', settings.bind(null, '.stroke-setting'), false);
+menu[3].addEventListener('click', settings.bind(null, '.fill-setting'), false);
+
+// Huaban settings panel setup
+var settings = document.querySelector('.huaban-settings');
+var settingsClose = document.querySelector('.huaban-settings-close');
+var selectedSetting = '';
+settingsClose.addEventListener('click', closeSettings, false);
+
+// Huaban settings setup
+var strokeRedSetting = document.querySelector('.stroke-red');
+var strokeGreenSetting = document.querySelector('.stroke-green');
+var strokeBlueSetting = document.querySelector('.stroke-blue');
+var strokeWidthSetting = document.querySelector('.stroke-width');
+var strokeLinecapSetting = document.querySelector('.stroke-line-cap');
+var strokeLinejoinSetting = document.querySelector('.stroke-line-join');
+
+var fillRedSetting = document.querySelector('.fill-red');
+var fillGreenSetting = document.querySelector('.fill-green');
+var fillBlueSetting = document.querySelector('.fill-blue');
+var fillOpacitySetting = document.querySelector('.fill-opacity');
+
+// Huaban notification system setup
+var message = document.querySelector('.huaban-message');
+var messageText = document.querySelector('.huaban-message span');
 
 // Establish user generated elements
 var px = 0;
@@ -34,7 +55,6 @@ var py = 0;
 var shape = [];
 var pencil = [];
 var pencilNumber = 0;
-
 
 // ----------------
 // Huaban Surface Events
@@ -59,8 +79,11 @@ function touchSurface(event) {
   pencil.push([]);
 
   pencil[pencilNumber] = huaban.polyline().attr({
-    fill: 'transparent',
-    stroke: '#000'
+    fill: 'rgba(' + fillRedSetting.value + ', ' + fillGreenSetting.value + ', ' + fillBlueSetting.value + ', ' + fillOpacitySetting.value + ')',
+    stroke: 'rgb(' + strokeRedSetting.value + ', ' + strokeGreenSetting.value + ', ' + strokeBlueSetting.value + ')',
+    strokeWidth: strokeWidthSetting.value,
+    strokeLinecap: strokeLinecapSetting.value,
+    strokeLinejoin: strokeLinejoinSetting.value,
   });
 
   captureSurface(event);
@@ -82,7 +105,7 @@ function leaveSurface(event) {
 }
 
 // ----------------
-// Huaban Option Events
+// Huaban Menu Events
 // ----------------
 
 function showMessage(action) {
@@ -139,5 +162,29 @@ function undo() {
 
   }
 
+
+}
+
+// ----------------
+// Huaban Settings Events
+// ----------------
+
+function settings(selected) {
+
+  if (selectedSetting != '') {
+    selectedSetting.classList.remove('selected-setting');
+  }
+
+  selectedSetting = document.querySelector(selected);
+
+  settings.classList.add('show-settings');
+  selectedSetting.classList.add('selected-setting');
+
+}
+
+function closeSettings() {
+
+  settings.classList.remove('show-settings');
+  selectedSetting.classList.remove('selected-setting');
 
 }

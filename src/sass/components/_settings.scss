@@ -1,0 +1,104 @@
+/*
+
+  components/settings
+
+*/
+
+/* ================
+// Settings
+// ============= */
+
+.huaban-settings {
+  position: absolute;
+  top: em(100);
+  left: 50%;
+  max-width: 30rem;
+  width: 100%;
+  z-index: 400;
+  padding: em(20) 3%;
+  background: $m1;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transform:
+    translate(-50%, 0)
+    scale(.95);
+  transition:
+    opacity .2s,
+    visibility .2s,
+    transform .2s;
+
+  &.show-settings {
+    opacity: 1;
+    visibility: visible;
+    transform:
+      translate(-50%, 0)
+      scale(1);
+  }
+
+}
+
+  .huaban-settings-close {
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+    height: em(50);
+    width: em(50);
+    padding: em(15);
+    cursor: pointer;
+    background: $m1;
+    border-radius: 100%;
+    box-shadow: 0 0 0 em(5) #fff;
+    fill: #fff;
+    transform:
+      translate(-50%, 50%)
+      scale(1);
+    transition:
+      background .2s,
+      transform .2s;
+
+    &:hover {
+      background: darken($m1, 5%);
+      transform:
+        translate(-50%, 50%)
+        scale(1.15);
+    }
+
+  }
+
+  [class$='setting'] {
+    display: none;
+
+    @at-root .selected-setting {
+      display: block;
+    }
+
+  }
+
+
+/* ================
+// Stroke Setting
+// ============= */
+
+.stroke-setting {
+
+  em {
+    border-bottom: .15em solid #fff;
+  }
+
+}
+
+
+/* ================
+// Fill Setting
+// ============= */
+
+.fill-setting {
+
+  em {
+    padding-right: .15em;
+    background: #fff;
+    color: $m1;
+  }
+
+}

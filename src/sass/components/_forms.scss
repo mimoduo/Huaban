@@ -31,6 +31,11 @@ input {
 
 }
 
+[type='range'] {
+  width: 100%;
+  background: #fff;
+}
+
 [type='text'] {}
 
 [type='radio'] {}
@@ -65,7 +70,9 @@ label {}
 // Select / Option
 // ============= */
 
-select {}
+select {
+  width: 100%;
+}
 
 
 /* ================

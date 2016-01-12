@@ -1,6 +1,6 @@
 /*
 
-  navigation/options
+  navigation/menu
 
 */
 
@@ -9,7 +9,7 @@
 // Options Menu
 // ============= */
 
-.huaban-options {
+.huaban-menu {
   @include list-reset;
   position: fixed;
   top: 0;
@@ -24,10 +24,16 @@
   }
 
     li {
+      display: flex;
+      align-items: center;
       border-right: 1px solid $m1;
       padding: em(12);
       cursor: pointer;
       fill: $m1;
+    }
+
+    .rough-divide {
+      border-right-width: em(4);
     }
 
       svg {

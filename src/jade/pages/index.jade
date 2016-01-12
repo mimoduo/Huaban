@@ -6,12 +6,114 @@ extends ../templates/site.jade
 
 block main
   svg.huaban
-  menu.huaban-options
+  menu.huaban-menu
     ol
       li
         +symbol('delete')
-      li
+      li.rough-divide
         +symbol('undo')
+      li
+        +symbol('lens')
+        +symbol('lens')
+      li
+        +symbol('format_color_fill')
+  .huaban-settings
+    .huaban-settings-close
+      +symbol('close')
+    .stroke-setting
+      h2 Update #[em Stroke]
+      .grid
+        .col-full
+          label Stroke Width: #[span ]
+            input.stroke-width(
+              min="1"
+              max="100"
+              name="stroke-width"
+              type="range"
+              value="1"
+            )
+      .grid
+        .col-full
+          label Stroke Red Value:
+            input.stroke-red(
+              min="0"
+              max="255"
+              name="stroke-red"
+              type="range"
+              value="1"
+            )
+          label Stroke Green Value:
+            input.stroke-green(
+              min="0"
+              max="255"
+              name="stroke-green"
+              type="range"
+              value="1"
+            )
+          label Stroke Blue Value:
+            input.stroke-blue(
+              min="0"
+              max="255"
+              name="stroke-blue"
+              type="range"
+              value="1"
+            )
+      .grid
+        .col-tiny-6
+          label Stroke Line Cap:
+            select.stroke-line-cap
+              option(
+                selected
+                value="butt"
+              ) Butt
+              option(value="round") Round
+              option(value="square") Square
+        .col-tiny-6
+          label Stroke Line Join:
+            select.stroke-line-join
+              option(
+                selected
+                value="miter"
+              ) Miter
+              option(value="round") Round
+              option(value="bevel") Bevel
+    .fill-setting
+      h2 Update #[em Fill]
+      .grid
+        .col-full
+          label Fill Red Value:
+            input.fill-red(
+              min="0"
+              max="255"
+              name="fill-red"
+              type="range"
+              value="0"
+            )
+          label Fill Green Value:
+            input.fill-green(
+              min="0"
+              max="255"
+              name="fill-green"
+              type="range"
+              value="0"
+            )
+          label Fill Blue Value:
+            input.fill-blue(
+              min="0"
+              max="255"
+              name="fill-blue"
+              type="range"
+              value="0"
+            )
+          label Fill Opacity:
+            input.fill-opacity(
+              min="0"
+              max="1"
+              step=".025"
+              name="fill-opacity"
+              type="range"
+              value="0"
+            )
   .huaban-message
     +symbol('feedback')
     span

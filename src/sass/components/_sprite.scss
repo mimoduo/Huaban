@@ -16,13 +16,34 @@
   }
 
   &-undo {
-    height: em(25);
-    width: em(25);
+    height: em(28);
+    width: em(28);
   }
 
   &-feedback {
     height: em(25);
     width: em(25);
+  }
+
+  &-lens {
+    height: em(10);
+    width: em(10);
+
+    + * {
+      height: em(15);
+      width: em(15);
+    }
+
+  }
+
+  &-format_color_fill {
+    height: em(22);
+    width: em(22);
+  }
+
+  &-close {
+    height: em(20);
+    width: em(20);
   }
 
 }

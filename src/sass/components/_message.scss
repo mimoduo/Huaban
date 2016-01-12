@@ -10,14 +10,13 @@
 
 .huaban-message {
   position: absolute;
-  top: 0;
+  top: em(50);
   left: 0;
   z-index: 300;
   display: flex;
   align-items: center;
   width: 100%;
   padding: em(13) em(12) em(12);
-  pointer-events: none;
   background: $m1;
   color: #fff;
   opacity: 0;
