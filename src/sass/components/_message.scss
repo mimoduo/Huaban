@@ -1,0 +1,51 @@
+/*
+
+  components/message
+
+*/
+
+/* ================
+// Huaban Message
+// ============= */
+
+.huaban-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: em(13) em(12) em(12);
+  pointer-events: none;
+  background: $m1;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity .3s,
+    visibility .3s;
+
+  &.show-message {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  svg {
+    margin-right: em(10);
+    fill: #fff;
+    transform-origin: left bottom;
+    transform:
+      rotate(-25deg)
+      scale(0);
+    transition: transform .3s;
+
+    @at-root .show-message svg {
+      transform:
+        rotate(0)
+        scale(1);
+    }
+
+  }
+
+}

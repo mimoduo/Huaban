@@ -1,0 +1,44 @@
+/*
+
+  utilities/functions
+
+*/
+
+
+/* ================
+// Calculate em
+// ============= */
+
+@function em($target, $context: $body-size) {
+
+  $strip-target: su($target);
+  $strip-context: su($context);
+  @return ($strip-target / $strip-context) * 1em;
+
+}
+
+
+/* ================
+// Calculate rem
+// ============= */
+
+@function rem($target, $context: 16) {
+
+  $strip-target: su($target);
+  $strip-context: su($context);
+  @return ($strip-target / $strip-context) * 1rem;
+
+}
+
+
+/* ================
+// Strip units
+// ============= */
+
+// http://css-tricks.com/snippets/sass/strip-unit-function/
+
+@function su($num) {
+
+  @return $num / ($num * 0 + 1);
+
+}

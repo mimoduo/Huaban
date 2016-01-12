@@ -1,0 +1,104 @@
+/*
+
+  configuration/dynamic
+
+*/
+
+
+/* ================
+// Asset Paths
+// ============= */
+
+// The path where compiled / exported files reside
+
+$layout-dir: '../';
+$image-dir: $layout-dir + 'images/';
+$font-dir: $layout-dir + 'fonts/';
+
+
+/* ================
+// Column Setup
+// ============= */
+
+// Referenced in mimo/grid.scss
+
+// Max width of overall site content
+$column-boundary: 1000;
+
+// Number of columns the grid is based off of
+$column-base: 12;
+
+// Half the space between each column
+// Defines the bottom margin of each column as well
+$column-between: 1%;
+
+// Do you need to utilize the push feature of this grid system?
+$column-push-desired: true;
+
+// Do you need to utilize the flush feature of this grid system?
+$column-flush-desired: false;
+
+
+/* ================
+// Drawer Trigger
+// ============= */
+
+// Referenced in mimo/drawer.scss
+
+// Define the total trigger height and width
+$trigger-dimension: 60;
+
+// Define the height of each stripe
+$stripe-height: 2;
+
+// Define the space between each stripe
+$stripe-space: 2;
+
+// Define the color of every stripe
+$stripe-color: #000;
+
+
+/* ================
+// Tool Choices
+// ============= */
+
+// Referenced in utilities/common.scss
+$gravity-toolkit: false;
+
+// Difference in value between each iteration
+$gravity-space: 20;
+
+// How many times to iterate using a given space
+$gravity-extent: 2;
+
+
+/* ================
+// Situational Flexpoints
+// ============= */
+
+// http://github.com/nhall
+// This is one of Nick Hall's ideas
+// These occur when items in relation to each other change at the same point
+
+// When do accordions become harmonicas?
+$accordion-to-harmonica: 'huge';
+
+// When will content be at a comfortable time to breath in a two column layout?
+// $create-columns: 600;
+
+// When does the off-canvas / drawer disappear?
+// $drawer-disappears: 600;
+
+
+/* ================
+// Brand Colors
+// ============= */
+
+// Abbreviated naming convention
+// $a1, $a2. stands for $accent#
+// $s1, $s2. stands for $shade#
+
+$m1: #faa;
+
+// Alternative naming convention
+// $pink, $purple. stands for actual name of color

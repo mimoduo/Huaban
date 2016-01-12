@@ -1,0 +1,67 @@
+/*
+
+  mimo/grid
+    http://codepen.io/mimoduo/pen/vOMxLE
+
+*/
+
+
+/* ================
+// Grid
+// ============= */
+
+// 1: All grids have their right and left margins pulled outward by default
+// 1: This ensures that the columns inside will be flush with the grid container
+.grid {
+  @include clear;
+  margin: 0 $column-between * -1;
+}
+
+  // Columns
+  // ----------------
+
+  [class^='col-'] {
+    float: left;
+    margin: 0 $column-between $column-between * 2;
+    width: 100% - $column-between * 2;
+  }
+
+  [class*='flush'] {
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  // Iterates through a loop given the amount of breakpoints with $breakpoints
+  // Example class output: .col-small-4, .col-large-flush-4, .col-huge-push-4
+  @for $i from 1 to length($breakpoints) + 1 {
+
+    @media (min-width: em(nth(nth($breakpoints, $i), 2))) {
+
+      @for $x from 1 to $column-base {
+
+        .col-#{nth(nth($breakpoints, $i), 1)}-#{$x} {
+          width: 100% / $column-base * $x - $column-between * 2;
+        }
+
+        @if $column-flush-desired {
+
+          .col-#{nth(nth($breakpoints, $i), 1)}-flush-#{$x} {
+            width: 100% / $column-base * $x;
+          }
+
+        }
+
+        @if $column-push-desired {
+
+          .col-#{nth(nth($breakpoints, $i), 1)}-push-#{$x} {
+            margin-left: 100% / $column-base * $x + $column-between;
+          }
+
+        }
+
+      }
+
+    }
+
+  }

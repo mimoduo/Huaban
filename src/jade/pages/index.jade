@@ -1,0 +1,18 @@
+//- ================
+//- Home Page
+//- ================
+
+extends ../templates/site.jade
+
+block main
+  svg.huaban
+  menu.huaban-options
+    ol
+      li
+        +symbol('delete')
+      li
+        +symbol('undo')
+  .huaban-message
+    +symbol('feedback')
+    span
+

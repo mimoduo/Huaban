@@ -1,0 +1,33 @@
+/*
+
+  mimo/collage
+    http://codepen.io/mimoduo/pen/VYwamv
+
+*/
+
+
+/* ================
+// Collage Mixin
+// ============= */
+
+@mixin collage($x-span, $y-span, $x-point, $y-point, $x-max, $y-max: $x-max) {
+  $y-point: $y-point - 1;
+  $x-point: $x-point - 1;
+  top: percentage($y-point / $y-max);
+  left: percentage($x-point / $x-max);
+  height: percentage($y-span / $y-max);
+  width: percentage($x-span / $x-max);
+}
+
+
+/* ================
+// Collage
+// ============= */
+
+.collage {
+
+  li {
+    position: absolute;
+  }
+
+}

@@ -1,0 +1,68 @@
+/*
+
+  configuration/typography
+
+*/
+
+
+/* ================
+// Font Families
+// ============= */
+
+// https://www.google.com/fonts
+// http://www.fontsquirrel.com/
+// https://typekit.com/
+
+$sans-serif: 'Montserrat';
+
+$serif: null;
+
+$slab: null;
+
+$display: null;
+
+$handwriting: null;
+
+$monospaced: null;
+
+// https://icomoon.io/app/
+
+$font-icon: 'icomoon';
+
+
+/* ================
+// Body Font Properties
+// ============= */
+
+// Applied to body {} within structure/root
+
+$body-size: 16;
+$body-line: 22;
+
+
+/* ================
+// Heading Properties
+// ============= */
+
+// Applied to h# {} within components/type
+
+$h1-size: 40;
+$h1-line: 50;
+
+$h2-size: 35;
+$h2-line: 45;
+
+$h3-size: 30;
+$h3-line: 40;
+
+$h4-size: 25;
+$h4-line: 35;
+
+$h5-size: 20;
+$h5-line: 30;
+
+$h6-size: $body-size;
+$h6-line: $body-size;
+
+$mini-size: 14;
+$mini-line: 16;

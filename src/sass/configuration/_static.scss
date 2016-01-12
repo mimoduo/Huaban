@@ -1,0 +1,39 @@
+/*
+
+  configuration/static
+
+*/
+
+
+/* ================
+// Breakpoints
+// ============= */
+
+// Create a multidimensial array to store breakpoint aliases & respective values
+// Used to assign classes to the grid system within mimo/_grid.scss
+
+$breakpoints: (
+  'mini': 300,
+  'tiny': 400,
+  'small': 500,
+  'medium': 600,
+  'big': 700,
+  'large': 800,
+  'huge': 900,
+  'aldnoah': 1000
+);
+
+
+/* ================
+// Font Weights
+// ============= */
+
+// Use normal and bold reserved names rather than a variable
+
+$thin: 100;
+$extra-light: 200;
+$light: 300;
+$medium: 500;
+$semi-bold: 600;
+$heavy: 800;
+$black: 900;

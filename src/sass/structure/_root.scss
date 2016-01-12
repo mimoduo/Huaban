@@ -1,0 +1,37 @@
+/*
+
+  structure/root
+
+*/
+
+
+/* ================
+// Universal Structure
+// ============= */
+
+*,
+*:before,
+*:after {
+  position: relative;
+  box-sizing: border-box;
+}
+
+
+/* ================
+// html & body
+// ============= */
+
+html {
+  overflow: hidden;
+  height: 100%;
+  font-family: $sans-serif;
+}
+
+  // font-size resides on the body in order to secure control
+  // over the relationship between rem units and html
+
+  body {
+    height: 100%;
+    font-size: em($body-size, 16);
+    line-height: su(em($body-line, $body-size));
+  }

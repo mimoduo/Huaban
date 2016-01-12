@@ -1,0 +1,39 @@
+/*
+
+  navigation/options
+
+*/
+
+
+/* ================
+// Options Menu
+// ============= */
+
+.huaban-options {
+  @include list-reset;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  border-bottom: 1px solid $m1;
+
+  ol {
+    @include list-reset;
+    display: flex;
+  }
+
+    li {
+      border-right: 1px solid $m1;
+      padding: em(12);
+      cursor: pointer;
+      fill: $m1;
+    }
+
+      svg {
+        display: block;
+        fill: inherit;
+        transition: fill .2s;
+      }
+
+}

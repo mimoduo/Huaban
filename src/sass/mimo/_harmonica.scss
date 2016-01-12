@@ -1,0 +1,50 @@
+/*
+
+  mimo/harmonica
+    http://codepen.io/mimoduo/pen/epZaMq
+
+*/
+
+
+/* ================
+// Harmonica
+// ============= */
+
+.harmonica {
+
+  @include media($accordion-to-harmonica) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+}
+
+  .harmonica-header {
+    cursor: pointer;
+
+    @include media($accordion-to-harmonica) {
+      flex: 1 auto;
+      order: 1;
+    }
+
+    &:hover {}
+
+    &.active {
+
+      + * {
+        display: block;
+      }
+
+    }
+
+  }
+
+  .harmonica-content {
+    display: none;
+
+    @include media($accordion-to-harmonica) {
+      order: 2;
+      width: 100%;
+    }
+
+  }

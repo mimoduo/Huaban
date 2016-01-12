@@ -1,0 +1,16 @@
+//- ================
+//- Site Template
+//- ================
+
+doctype html
+html(
+  dir="ltr"
+  lang="en-US"
+)
+  include ../regions/head.jade
+  include ../mixins/symbol.jade
+  body
+    .site-sprite(style="display: none;")
+      include ../../../dist/svg/sprite.symbol.svg
+    block main
+    include ../regions/footer.jade

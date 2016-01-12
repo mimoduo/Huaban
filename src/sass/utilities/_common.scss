@@ -1,0 +1,155 @@
+/*
+
+  utilities/common
+
+*/
+
+
+/* ================
+// Media Queries
+// ============= */
+
+@mixin media($breakpoint) {
+
+  @media (min-width: (map-get($breakpoints, $breakpoint)) / 16 * 1em) {
+    @content;
+  }
+
+}
+
+
+/* ================
+// Cover
+// ============= */
+
+@mixin cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.cover {
+  @include cover;
+}
+
+
+/* ================
+// Compartment
+// ============= */
+
+@mixin compartment($max-width: $column-boundary) {
+  max-width: rem($max-width);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.compartment {
+  @include compartment;
+}
+
+
+/* ================
+// List Reset
+// ============= */
+
+@mixin list-reset {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.list-reset {
+  @include list-reset;
+}
+
+
+/* ================
+// Gravity Toolset
+// ============= */
+
+// modified version of gravitons by jxnblk
+// http://jxnblk.com/gravitons/
+// https://github.com/jxnblk/gravitons
+
+$atom: (
+  'margin': 'm',
+  'padding': 'p'
+);
+
+$direction: (
+  'top': 't',
+  'right': 'r',
+  'bottom': 'b',
+  'left': 'l'
+);
+
+
+@if $gravity-toolkit {
+
+  @for $a from 1 through length($atom) {
+
+    @for $e from 1 through $gravity-extent {
+
+      .#{nth(nth($atom, $a), 2)}#{$e} {
+        #{nth(nth($atom, $a), 1)}: rem($gravity-space * $e);
+      }
+
+    }
+
+    @for $d from 1 through length($direction) {
+
+      @for $e from 1 through $gravity-extent {
+
+        .#{nth(nth($atom, $a), 2)}#{nth(nth($direction, $d), 2)}#{$e} {
+          #{nth(nth($atom, $a), 1)}-#{nth(nth($direction, $d), 1)}: rem($gravity-space * $e);
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+
+/* ================
+// Clear
+// ============= */
+
+@mixin clear {
+
+  &:after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+
+}
+
+.clear {
+  @include clear;
+}
+
+
+/* ================
+// Font Face
+// ============= */
+
+@mixin font-face($name, $style, $weight) {
+
+  @font-face {
+    font-family: "#{$name}";
+    font-style: $style;
+    font-weight: $weight;
+    src: url("../fonts/#{$name}.eot") format("eot"),
+         url("../fonts/#{$name}.woff2") format("woff2"),
+         url("../fonts/#{$name}.woff") format("woff"),
+         url("../fonts/#{$name}.ttf") format("truetype"),
+         url("../fonts/#{$name}.svg##{$name}") format("svg");
+  }
+
+}
