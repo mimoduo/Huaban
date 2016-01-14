@@ -16,7 +16,7 @@
   left: 0;
   z-index: 200;
   width: 100%;
-  border-bottom: 1px solid $m1;
+  border-bottom: 1px dashed $m1;
 
   ol {
     @include list-reset;
@@ -26,14 +26,14 @@
     li {
       display: flex;
       align-items: center;
-      border-right: 1px solid $m1;
+      border-right: 1px dashed $m1;
       padding: em(12);
       cursor: pointer;
       fill: $m1;
     }
 
     .rough-divide {
-      border-right-width: em(4);
+      border-right-width: em(2);
     }
 
       svg {

@@ -1731,7 +1731,7 @@ menu a {
   left: 0;
   z-index: 200;
   width: 100%;
-  border-bottom: 1px solid #faa;
+  border-bottom: 1px dashed #faa;
 }
 
 .huaban-menu ol {
@@ -1754,14 +1754,14 @@ menu a {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
-  border-right: 1px solid #faa;
+  border-right: 1px dashed #faa;
   padding: 0.75em;
   cursor: pointer;
   fill: #faa;
 }
 
 .huaban-menu .rough-divide {
-  border-right-width: 0.25em;
+  border-right-width: 0.125em;
 }
 
 .huaban-menu svg {
