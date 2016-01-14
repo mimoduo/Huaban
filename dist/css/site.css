@@ -1762,6 +1762,7 @@ menu a {
 
 .huaban-menu .rough-divide {
   border-right-width: 0.125em;
+  border-right-style: solid;
 }
 
 .huaban-menu svg {
