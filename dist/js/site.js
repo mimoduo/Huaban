@@ -28,7 +28,7 @@ menu[3].addEventListener('click', settings.bind(null, '.fill-setting'), false);
 // Huaban settings panel setup
 var settings = document.querySelector('.huaban-settings');
 var settingsClose = document.querySelector('.huaban-settings-close');
-var selectedSetting = null;
+var selectedSetting = '';
 settingsClose.addEventListener('click', closeSettings, false);
 
 // Huaban settings setup
