@@ -167,18 +167,13 @@
   .download-option {
 
     svg {
-      transition:
-        filter .2s,
-        transform .2s;
+      transition: filter .2s;
     }
 
     &:hover {
 
       svg {
-        filter:
-          drop-shadow(em(-2) 0 0 #fff)
-          drop-shadow(em(-4) 0 0 $m1);
-        transform: translate(em(4), 0);
+        filter: drop-shadow(0 0 em(4) $m1);
       }
 
     }

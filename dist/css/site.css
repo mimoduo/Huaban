@@ -1898,16 +1898,13 @@ menu a {
 }
 
 .download-option svg {
-  -webkit-transition: -webkit-filter .2s, -webkit-transform .2s;
-  transition: -webkit-filter .2s, -webkit-transform .2s;
-  transition: filter .2s, transform .2s;
-  transition: filter .2s, transform .2s, -webkit-filter .2s, -webkit-transform .2s;
+  -webkit-transition: -webkit-filter .2s;
+  transition: -webkit-filter .2s;
+  transition: filter .2s;
+  transition: filter .2s, -webkit-filter .2s;
 }
 
 .download-option:hover svg {
-  -webkit-filter: drop-shadow(-0.125em 0 0 #fff) drop-shadow(-0.25em 0 0 #faa);
-  filter: drop-shadow(-0.125em 0 0 #fff) drop-shadow(-0.25em 0 0 #faa);
-  -webkit-transform: translate(0.25em, 0);
-  -ms-transform: translate(0.25em, 0);
-  transform: translate(0.25em, 0);
+  -webkit-filter: drop-shadow(0 0 0.25em #faa);
+  filter: drop-shadow(0 0 0.25em #faa);
 }
