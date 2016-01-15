@@ -1651,9 +1651,15 @@ fieldset {
 /* ================
 // Input
 // ============= */
-[type='range'] {
+input[type='range'] {
   width: 100%;
   background: #fff;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: #ffc4c4;
+  border-radius: 0.75em;
 }
 
 /* ================
@@ -1670,6 +1676,8 @@ fieldset {
 // ============= */
 select {
   width: 100%;
+  border: 0;
+  background: #ffc4c4;
 }
 
 /* ================
