@@ -1298,11 +1298,6 @@ h6,
 }
 
 .symbol-lens {
-  height: 0.625em;
-  width: 0.625em;
-}
-
-.symbol-lens + * {
   height: 0.875em;
   width: 0.875em;
 }
@@ -1768,6 +1763,8 @@ menu a {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  max-width: 3.125em;
+  width: 100%;
   border-right: 1px dashed #faa;
   padding: 0.6875em 0.75em;
   cursor: pointer;
@@ -1784,4 +1781,133 @@ menu a {
   fill: inherit;
   -webkit-transition: fill .2s;
   transition: fill .2s;
+}
+
+/* ================
+  // Options
+  // ============= */
+.delete-option:before, .delete-option:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 0.125em;
+  width: 50%;
+  content: '';
+  background: #faa;
+  -webkit-box-shadow: 0 -0.125em 0 0 #fff;
+  box-shadow: 0 -0.125em 0 0 #fff;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.delete-option:before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg) scaleX(0);
+  -ms-transform: translate(-50%, -50%) rotate(45deg) scaleX(0);
+  transform: translate(-50%, -50%) rotate(45deg) scaleX(0);
+}
+
+.delete-option:after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg) scaleX(0);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg) scaleX(0);
+  transform: translate(-50%, -50%) rotate(-45deg) scaleX(0);
+}
+
+.delete-option svg {
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.delete-option:hover:before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg) scaleX(1);
+  -ms-transform: translate(-50%, -50%) rotate(45deg) scaleX(1);
+  transform: translate(-50%, -50%) rotate(45deg) scaleX(1);
+}
+
+.delete-option:hover:after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg) scaleX(1);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg) scaleX(1);
+  transform: translate(-50%, -50%) rotate(-45deg) scaleX(1);
+}
+
+.delete-option:hover svg {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+.undo-option svg {
+  -webkit-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  transform-origin: center bottom;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.undo-option:hover svg {
+  -webkit-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+
+.stroke-option svg {
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
+}
+
+.stroke-option:hover svg {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+}
+
+.fill-option {
+  -webkit-transition: -webkit-box-shadow .2s;
+  transition: -webkit-box-shadow .2s;
+  transition: box-shadow .2s;
+  transition: box-shadow .2s, -webkit-box-shadow .2s;
+}
+
+.fill-option svg {
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
+  -webkit-transition: fill .2s, -webkit-transform .2s;
+  transition: fill .2s, -webkit-transform .2s;
+  transition: fill .2s, transform .2s;
+  transition: fill .2s, transform .2s, -webkit-transform .2s;
+}
+
+.fill-option:hover {
+  -webkit-box-shadow: inset 0 -3.125em 0 0 #faa;
+  box-shadow: inset 0 -3.125em 0 0 #faa;
+}
+
+.fill-option:hover svg {
+  fill: #fff;
+  -webkit-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+
+.download-option svg {
+  -webkit-transition: -webkit-filter .2s, -webkit-transform .2s;
+  transition: -webkit-filter .2s, -webkit-transform .2s;
+  transition: filter .2s, transform .2s;
+  transition: filter .2s, transform .2s, -webkit-filter .2s, -webkit-transform .2s;
+}
+
+.download-option:hover svg {
+  -webkit-filter: drop-shadow(-0.125em 0 0 #fff) drop-shadow(-0.25em 0 0 #faa);
+  filter: drop-shadow(-0.125em 0 0 #fff) drop-shadow(-0.25em 0 0 #faa);
+  -webkit-transform: translate(0.25em, 0);
+  -ms-transform: translate(0.25em, 0);
+  transform: translate(0.25em, 0);
 }

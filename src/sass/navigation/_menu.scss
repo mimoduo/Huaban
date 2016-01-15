@@ -27,6 +27,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      max-width: em(50);
+      width: 100%;
       border-right: 1px dashed $m1;
       padding: em(11) em(12);
       cursor: pointer;
@@ -45,3 +47,140 @@
       }
 
 }
+
+  /* ================
+  // Options
+  // ============= */
+
+  .delete-option {
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: em(2);
+      width: 50%;
+      content: '';
+      background: $m1;
+      box-shadow: 0 em(-2) 0 0 #fff;
+      transition: transform .2s;
+    }
+
+    &:before {
+      transform:
+        translate(-50%, -50%)
+        rotate(45deg)
+        scaleX(0);
+    }
+
+    &:after {
+      transform:
+        translate(-50%, -50%)
+        rotate(-45deg)
+        scaleX(0);
+    }
+
+    svg {
+      transition: transform .2s;
+    }
+
+    &:hover {
+
+      &:before {
+        transform:
+          translate(-50%, -50%)
+          rotate(45deg)
+          scaleX(1);
+      }
+
+      &:after {
+        transform:
+          translate(-50%, -50%)
+          rotate(-45deg)
+          scaleX(1);
+      }
+
+      svg {
+        transform: scale(0);
+      }
+
+    }
+
+  }
+
+  .undo-option {
+
+    svg {
+      transform-origin: center bottom;
+      transition: transform .2s;
+    }
+
+    &:hover {
+
+      svg {
+        transform: rotate(-15deg);
+      }
+
+    }
+
+  }
+
+  .stroke-option {
+
+    svg {
+      transition: transform .2s;
+    }
+
+    &:hover {
+
+      svg {
+        transform: scale(1.5);
+      }
+
+    }
+
+  }
+
+  .fill-option {
+    transition: box-shadow .2s;
+
+    svg {
+      transform: rotate(0);
+      transition:
+        fill .2s,
+        transform .2s;
+    }
+
+    &:hover {
+      box-shadow: inset 0 em(-50) 0 0 $m1;
+
+      svg {
+        fill: #fff;
+        transform: rotate(10deg);
+      }
+
+    }
+
+  }
+
+  .download-option {
+
+    svg {
+      transition:
+        filter .2s,
+        transform .2s;
+    }
+
+    &:hover {
+
+      svg {
+        filter:
+          drop-shadow(em(-2) 0 0 #fff)
+          drop-shadow(em(-4) 0 0 $m1);
+        transform: translate(em(4), 0);
+      }
+
+    }
+
+  }

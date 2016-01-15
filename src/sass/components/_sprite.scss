@@ -31,14 +31,8 @@
   }
 
   &-lens {
-    height: em(10);
-    width: em(10);
-
-    + * {
-      height: em(14);
-      width: em(14);
-    }
-
+    height: em(14);
+    width: em(14);
   }
 
   &-format_color_fill {
