@@ -18,12 +18,15 @@ surface.addEventListener('mousedown', touchSurface, false);
 surface.addEventListener('mousemove', drawSurface, false);
 surface.addEventListener('mouseup', leaveSurface, false);
 
+var sketchLink = document.createElement('a');
+
 // Huaban menu setup
 var menu = document.querySelectorAll('.huaban-menu li');
 menu[0].addEventListener('click', resetSurface, false);
 menu[1].addEventListener('click', undo, false);
 menu[2].addEventListener('click', settings.bind(null, '.stroke-setting'), false);
 menu[3].addEventListener('click', settings.bind(null, '.fill-setting'), false);
+menu[4].addEventListener('click', downloadSketch, false);
 
 // Huaban settings panel setup
 var settings = document.querySelector('.huaban-settings');
@@ -162,6 +165,29 @@ function undo() {
 
   }
 
+
+}
+
+function downloadSketch(event) {
+
+  if (pencilNumber != 0) {
+
+    var sketch = new Blob([surface.outerHTML], {type: 'image/svg+xml'});
+    var sketchUrl = window.URL.createObjectURL(sketch);
+
+    sketchLink.href = sketchUrl;
+    sketchLink.download = 'Sketch';
+    sketchLink.click();
+
+    window.URL.revokeObjectURL(sketchUrl);
+
+    showMessage('Your sketch has been exported');
+
+  } else {
+
+    showMessage('There is no sketch to export');
+
+  }
 
 }
 

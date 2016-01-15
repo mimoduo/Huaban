@@ -5,7 +5,11 @@
 extends ../templates/site.jade
 
 block main
-  svg.huaban
+  svg.huaban(
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+  )
   menu.huaban-menu
     ol
       li
@@ -15,8 +19,10 @@ block main
       li
         +symbol('lens')
         +symbol('lens')
-      li
+      li.rough-divide
         +symbol('format_color_fill')
+      li
+        +symbol('file_download')
   .huaban-settings
     .huaban-settings-close
       +symbol('close')

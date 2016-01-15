@@ -26,8 +26,9 @@
     li {
       display: flex;
       align-items: center;
+      justify-content: center;
       border-right: 1px dashed $m1;
-      padding: em(12);
+      padding: em(11) em(12);
       cursor: pointer;
       fill: $m1;
     }

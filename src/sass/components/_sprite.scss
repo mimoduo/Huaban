@@ -11,6 +11,11 @@
 .symbol {
 
   &-delete {
+    height: em(22);
+    width: em(22);
+  }
+
+  &-clear {
     height: em(25);
     width: em(25);
   }
@@ -30,15 +35,20 @@
     width: em(10);
 
     + * {
-      height: em(15);
-      width: em(15);
+      height: em(14);
+      width: em(14);
     }
 
   }
 
   &-format_color_fill {
-    height: em(22);
-    width: em(22);
+    height: em(20);
+    width: em(20);
+  }
+
+  &-file_download {
+    height: em(25);
+    width: em(25);
   }
 
   &-close {
